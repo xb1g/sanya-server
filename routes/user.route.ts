@@ -15,7 +15,7 @@ usersRouter
   })
   .post("/", async (ctx) => {
     const body = await ctx.request.body({ type: "json" }).value;
-    console.log(body);
+    console.log(typeof body);
     const user = await Users.insertOne(body);
     ctx.response.body = user;
   })
